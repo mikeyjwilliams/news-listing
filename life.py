@@ -4,52 +4,138 @@ from typing import Dict, List
 class Human:
     def __init__(self, name='John', age=24, gender='M', height_in_inches=56, weight_in_pounds=155, eye_count=2, teeth_count=23, hair_style='short', eye_color='blue',
         teeth_color='yellow', hair_color='blonde', skin_tone=3, hair_length=3, energy_percentage=100) -> None:
-        self.name: str = name
-        self.age: int = 
-        self.gender: str = gender
-        self.height: int = height_in_inches
-        self.weight: float = weight_in_pounds
-        self.eye_count: int = eye_count
-        self.teeth_count: int = teeth_count
-        self.hair_style: str = hair_style
-        self.eye_color: str = eye_color
-        self.teeth_color: str = teeth_color
-        self.hair_color: str = hair_color
-        self.skin_tone: int = skin_tone
-        self.hair_length: int = hair_length
-        self.energy_percentage: float = energy_percentage
+        self.__name: str = name
+        self.__age: int = age
+        self.__gender: str = gender
+        self.__height: int = height_in_inches
+        self.__weight: float = weight_in_pounds
+        self.__eye_count: int = eye_count
+        self.__teeth_count: int = teeth_count
+        self.__hair_style: str = hair_style
+        self.__eye_color: str = eye_color
+        self.__teeth_color: str = teeth_color
+        self.__hair_color: str = hair_color
+        self.__skin_tone: int = skin_tone
+        self.__hair_length: int = hair_length
+        self.__energy_percentage: float = energy_percentage
 
 
     def __repr__(self) -> str:
-        return f'''Human({self.name}, {self.age}, \n
-    {self.gender}, {self.height}, {self.weight}, {self.eye_count}, \n
-    {self.teeth_count}, {self.hair_style}, {self.eye_color}, \n
-    {self.teeth_color}, {self.hair_color}, {self.skin_tone}, {self.hair_length}, \n
-    {self.energy_percentage}'''
+        return f'''Human({self.__name}, {self.__age}, \n
+    {self.__gender}, {self.__height}, {self.__weight}, {self.__eye_count}, \n
+    {self.__teeth_count}, {self.__hair_style}, {self.__eye_color}, \n
+    {self.__teeth_color}, {self.__hair_color}, {self.__skin_tone}, {self.__hair_length}, \n
+    {self.__energy_percentage}'''
         
     
     def __str__(self) -> str:
-        return f'''name {self.name}, \n
-    {self.age}, {self.gender}, {self.height} {self.weight}  \n
-    {self.eye_count}, {self.teeth_count}, {self.hair_style},  {self.eye_color}, \n
-    {self.teeth_color}, {self.hair_color}, {self.skin_tone}, {self.hair_length}, \n
-    {self.energy_percentage}'''
+        return f'''name {self.__name}, \n
+    {self.__age}, {self.__gender}, {self.__height} {self.__weight}  \n
+    {self.__eye_count}, {self.__teeth_count}, {self.__hair_style},  {self.__eye_color}, \n
+    {self.__teeth_color}, {self.__hair_color}, {self.__skin_tone}, {self.__hair_length}, \n
+    {self.__energy_percentage}'''
+        
+
+
+    def name_getter(self):
+        return self.__name
+
+    def name_setter(self, name):
+        self.__name = name
+
+    def age_getter(self):
+        return self.__age
+
+    def age_setter(self, age):
+        self.__age = age
+
+    def gender_getter(self):
+        return self.__gender
+
+    def gender_setter(self, gender):
+        self.__gender = gender
+
+    def height_getter(self):
+        return self.__height
+
+    def height_setter(self, height):
+        self.__height = height
+
+    def weight_getter(self):
+        return self.__weight
+
+    def weight_setter(self, weight):
+        self.__weight = weight
+
+    def eye_count_getter(self):
+        return self.__eye_count
+
+    def eye_count_setter(self, eye_count):
+        self.__eye_count = eye_count
+
+    def teeth_count_getter(self):
+        return self.__teeth_count
+
+    def teeth_count_setter(self, teeth_count):
+        self.__teeth_count = teeth_count
+
+    def hair_style_getter(self):
+        return self.__hair_style
+
+    def hair_style_setter(self, hair_style):
+        self.__hair_style = hair_style
+
+    def eye_color_getter(self):
+        return self.__eye_color
+
+    def eye_color_setter(self, eye_color):
+        self.__eye_color = eye_color
+
+    def teeth_color_getter(self):
+        return self.__teeth_color
+
+    def teeth_color_setter(self, teeth_color):
+        self.__teeth_color = teeth_color
+
+    def hair_style_getter(self):
+        return self.__hair_style
+
+    def hair_style_setter(self, hair_style):
+        self.__hair_style = hair_style
+
+    def skin_tone_getter(self):
+        return self.__skin_tone
+    
+    def skin_tone_setter(self, skin_tone):
+        self.__skin_tone = skin_tone
+
+    def hair_length_getter(self):
+        return self.__hair_length
+
+    def hair_length_setter(self, hair_length):
+        self.__hair_length = hair_length
+
+    def energy_percentage_getter(self):
+        return self.__energy_percentage
+
+    def energy_percentage_setter(self, energy_percentage):
+        self.__energy_percentage = energy_percentage
         
         
-    def day_pasts(self, age_in_years):
-        one_day = 0.00279397260273972603 # 1 year = 365 days = 365/1 = one_day
-        one_hour = one_day / 60
-        
-        age_in_years = self.age
-        
-        if _ < 0:
-            raise ValueError('Age cannot be negative')
-        elif _ == 0:
-            under_one = one_day * age_in_days
-            return under_one
         
         
-        self.energy_percentage += 0.1
-        self.energy_percentage = round(self.energy_percentage, 2)
-        self.energy_percentage = max(self.energy_percentage, 0)
-        self.energy_percentage = min(self.energy_percentage, 100)
+        
+        
+    # def day_pasts(self, age_in_years):
+    #     one_day = 0.00279397260273972603 # 1 year = 365 days = 365/1 = one_day
+    #     one_hour = one_day / 60
+    #     age_in_years = self.__age
+    #     if _ < 0:
+    #         raise ValueError('Age cannot be negative')
+    #     elif _ == 0:
+    #         under_one = one_day * age_in_days
+    #         return under_one
+    #     self.__energy_percentage += 0.1
+    #     self.__energy_percentage = round(self.__energy_percentage, 2)
+    #     self.__energy_percentage = max(self.__energy_percentage, 0)
+    #     self.__energy_percentage = min(self.__energy_percentage, 100)
