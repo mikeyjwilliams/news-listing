@@ -1,5 +1,9 @@
 import unittest
-from human import Human
+import sys
+
+# import from directory higher level
+from ..utils.human import Human
+
 
 class HumanTest(unittest.TestCase):
 

@@ -1,10 +1,14 @@
-from human import Human
+from utils.human import Human
 
 def main():
-    pass 
-    # j = Human(name='John Doe', age=24, gender='M', height_in_inches=75)
-    # j.weight_setter(125)
-    # print( j.weight_getter(), j.name_getter())
+     
+    john = Human(name='John Doe', age=24, gender='M', height_in_inches=75)
+    john.weight_setter(125)
+    print(john.get_first_name())
+    print('----')
+    print(john.get_last_name())
+    
+    
     
    
     

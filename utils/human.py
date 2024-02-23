@@ -39,11 +39,39 @@ class Human:
         
 
     # NAME SECTION
-    def name_getter(self):
+    def name_getter(self) -> str:
         return self.__name
 
-    def name_setter(self, name):
+    def name_setter(self, name) -> None:
         self.__name = name
+        
+    
+    def full_name(self) -> Dict[str, str]:
+        """
+        Returns a dictionary containing the full name of the Human, 
+        with keys 'first_name' and 'last_name'.
+
+        If the Human's name only contains one word, the 'last_name' key will be set to an empty string.
+
+        Parameters:
+            self (Human): The Human object for which to retrieve the full name.
+
+        Returns:
+            Dict[str, str]: A dictionary containing the full name, with keys 'first_name' and 'last_name'.
+        """
+        full_name_dict: dict = {}
+
+        full_name_dict['first_name'] = self.name_getter().split()[0]
+        full_name_dict['last_name'] = self.name_getter().split()[1] 
+        return full_name_dict
+    
+    # get first name from dict of full name
+    def get_first_name(self) -> str:
+        return self.full_name()['first_name']
+    
+    # get last name from dict of full name
+    def get_last_name(self) -> str:
+        return self.full_name()['last_name']
         
     
     # Age section
