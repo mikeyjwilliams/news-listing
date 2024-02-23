@@ -62,103 +62,102 @@ class Human:
         full_name_dict: dict = {}
         full_name_split = self.name_getter().split()
         if len(full_name_split) == 2:
-             full_name_dict['last_name'] = self.name_getter().split()[-1]
+            full_name_dict['last_name'] = self.name_getter().split()[-1]
         full_name_dict['first_name'] = self.name_getter().split()[0]
-        
-
-
-        # full_name_dict['first_name'] = self.name_getter().split()[0]
-        # if self. :
-        #     full_name_dict['last_name'] = self.name_getter().split()[1] 
-        # else:
-        #     full_name_dict['last_name'] = ''
         return full_name_dict
     
-    # get first name from dict of full name
     def get_first_name(self) -> str:
-        return self.full_name()['first_name']
+        """
+        Returns the first name of the Human.
+
+        Parameters:
+            self (Human): The Human object for which to retrieve the first name.
+
+        Returns:
+            str: The first name of the Human.
+        """
+        return self.get_full_name_dict()['first_name']
     
-    # get last name from dict of full name
     def get_last_name(self) -> str:
-        if len(self.full_name()) == 2:
-            return self.full_name()['last_name']
+        if len(self.get_full_name_dict()) == 2:
+            return self.get_full_name_dict()['last_name']
         else:
             return ''
         
     
     # Age section
-    def age_getter(self):
+    def age_getter(self) -> int:
         return self.__age
 
-    def age_setter(self, age):
+    def age_setter(self, age: int) -> None:
         self.__age = age
     
     # Gender section
-    def gender_getter(self):
+    def gender_getter(self) -> str:
         return self.__gender
 
-    def gender_setter(self, gender):
+    def gender_setter(self, gender: str) -> None:
         self.__gender = gender
     # Height section
-    def height_getter(self):
+    def height_getter(self) -> int:
         return self.__height
 
-    def height_setter(self, height):
+    def height_setter(self, height: int) -> None:
         self.__height = height
     # Weight section
-    def weight_getter(self):
+    def weight_getter(self) -> float:
         return self.__weight
 
-    def weight_setter(self, weight):
+    def weight_setter(self, weight: float) -> None:
         self.__weight = weight
     # Eye count section
-    def eye_count_getter(self):
+    def eye_count_getter(self) -> int:
         return self.__eye_count
 
-    def eye_count_setter(self, eye_count):
+    def eye_count_setter(self, eye_count: int) -> None:
         self.__eye_count = eye_count
     # Teeth count section
-    def teeth_count_getter(self):
+    def teeth_count_getter(self) -> int:
         return self.__teeth_count
 
-    def teeth_count_setter(self, teeth_count):
+    def teeth_count_setter(self, teeth_count: int) -> None:
         self.__teeth_count = teeth_count
     # hair_style section
-    def hair_style_getter(self):
+    def hair_style_getter(self) -> str:
         return self.__hair_style
 
-    def hair_style_setter(self, hair_style):
+    def hair_style_setter(self, hair_style: str) -> None:
         self.__hair_style = hair_style
     # Eye color section
-    def eye_color_getter(self):
+    def eye_color_getter(self) -> str:
         return self.__eye_color
 
-    def eye_color_setter(self, eye_color):
+    def eye_color_setter(self, eye_color: str) -> None:
         self.__eye_color = eye_color
     # Teeth color section
-    def teeth_color_getter(self):
+    def teeth_color_getter(self) -> str:
         return self.__teeth_color
 
-    def teeth_color_setter(self, teeth_color):
+    def teeth_color_setter(self, teeth_color: str) -> None:
         self.__teeth_color = teeth_color
 
     # skin tone section
-    def skin_tone_getter(self):
+    def skin_tone_getter(self) -> int:
         return self.__skin_tone
     
-    def skin_tone_setter(self, skin_tone):
+    def skin_tone_setter(self, skin_tone: int) -> None:
         self.__skin_tone = skin_tone
     # hair length section
-    def hair_length_getter(self):
+    def hair_length_getter(self) -> int:
         return self.__hair_length
 
-    def hair_length_setter(self, hair_length):
+    def hair_length_setter(self, hair_length: int) -> None:
         self.__hair_length = hair_length
     # Energy percentage section
-    def energy_percentage_getter(self):
+    def energy_percentage_getter(self) -> float:
         return self.__energy_percentage
 
-    def energy_percentage_setter(self, energy_percentage):
+    def energy_percentage_setter(self, energy_percentage: float) -> None:
         self.__energy_percentage = energy_percentage
     
         
