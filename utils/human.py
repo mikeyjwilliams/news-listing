@@ -4,7 +4,7 @@ from typing import Dict, List
 
 
 class Human:
-    def __init__(self, name='John', age=24, gender='M', height_in_inches=56, weight_in_pounds=155, eye_count=2, teeth_count=23, hair_style='short', eye_color='blue',
+    def __init__(self, name, age=24, gender='M', height_in_inches=56, weight_in_pounds=155, eye_count=2, teeth_count=23, hair_style='short', eye_color='blue',
         teeth_color='yellow', hair_color='blonde', skin_tone=3, hair_length=3, energy_percentage=100) -> None:
         self.__name: str = name
         self.__age: int = age
@@ -39,11 +39,51 @@ class Human:
         
 
     # NAME SECTION
-    def name_getter(self):
+    def name_getter(self) -> str:
         return self.__name
 
-    def name_setter(self, name):
+    def name_setter(self, name) -> None:
         self.__name = name
+        
+    
+    def get_full_name_dict(self) -> Dict[str, str]:
+        """
+        Returns a dictionary containing the full name of the Human, 
+        with keys 'first_name' and 'last_name'.
+
+        If the Human's name only contains one word, the 'last_name' key will be set to an empty string.
+
+        Parameters:
+            self (Human): The Human object for which to retrieve the full name.
+
+        Returns:
+            Dict[str, str]: A dictionary containing the full name, with keys 'first_name' and 'last_name'.
+        """
+        full_name_dict: dict = {}
+        full_name_split = self.name_getter().split()
+        if len(full_name_split) == 2:
+             full_name_dict['last_name'] = self.name_getter().split()[-1]
+        full_name_dict['first_name'] = self.name_getter().split()[0]
+        
+
+
+        # full_name_dict['first_name'] = self.name_getter().split()[0]
+        # if self. :
+        #     full_name_dict['last_name'] = self.name_getter().split()[1] 
+        # else:
+        #     full_name_dict['last_name'] = ''
+        return full_name_dict
+    
+    # get first name from dict of full name
+    def get_first_name(self) -> str:
+        return self.full_name()['first_name']
+    
+    # get last name from dict of full name
+    def get_last_name(self) -> str:
+        if len(self.full_name()) == 2:
+            return self.full_name()['last_name']
+        else:
+            return ''
         
     
     # Age section
