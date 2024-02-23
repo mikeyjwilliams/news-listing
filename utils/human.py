@@ -46,7 +46,7 @@ class Human:
         self.__name = name
         
     
-    def full_name(self) -> Dict[str, str]:
+    def get_full_name_dict(self) -> Dict[str, str]:
         """
         Returns a dictionary containing the full name of the Human, 
         with keys 'first_name' and 'last_name'.
