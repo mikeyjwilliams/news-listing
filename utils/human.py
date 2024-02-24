@@ -1,11 +1,54 @@
 # header documentation
+
 from typing import Dict, List
+
+def main():
+    John = Human(name='John Doe')
+    print(John)
+
+
+
 
 
 
 class Human:
-    def __init__(self, name, age=24, gender='M', height_in_inches=56, weight_in_pounds=155, eye_count=2, teeth_count=23, hair_style='short', eye_color='blue',
-    teeth_color='yellow', hair_color='blonde', skin_tone=3, hair_length=3, energy_percentage=1) -> None:
+    def __init__(self, name: str,
+                age: int = 18, 
+                gender: str = 'M', 
+                height_in_inches: int = 64,
+                weight_in_pounds: float = 172,
+                eye_count: int = 2,
+                teeth_count: int = 32,
+                hair_style: str = 'long',
+                eye_color: str = 'blue-green',
+                teeth_color: str = 'semi-white',
+                hair_color: str = 'red',
+                skin_tone: int = 3,
+                hair_length: int = 36,
+                energy_percentage: float = 1.0
+                ) -> None:
+        """
+        Initialize a Human object.
+
+        Args:
+            name (str): The name of the Human. REQUIRED
+            age (int, optional): The age of the Human. Defaults to 18.
+            gender (str, optional): The gender of the Human. Defaults to 'M'.
+            height_in_inches (int, optional): The height of the Human in inches. Defaults to 64.
+            weight_in_pounds (float, optional): The weight of the Human in pounds. Defaults to 172.
+            eye_count (int, optional): The number of eyes of the Human. Defaults to 2.
+            teeth_count (int, optional): The number of teeth of the Human. Defaults to 32.
+            hair_style (str, optional): The hair style of the Human. Defaults to 'long'.
+            eye_color (str, optional): The eye color of the Human. Defaults to 'blue-green'.
+            teeth_color (str, optional): The teeth color of the Human. Defaults to 'semi-white'.
+            hair_color (str, optional): The hair color of the Human. Defaults to 'red'.
+            skin_tone (int, optional): The skin tone of the Human. Defaults to 3.
+            hair_length (int, optional): The hair length of the Human. Defaults to 36.
+            energy_percentage (float, optional): The energy percentage of the Human. Defaults to 1.0.
+
+        Raises:
+            ValueError: If the energy percentage is less than 0 or greater than 1.
+        """
         self.__name: str = name
         self.__age: int = age
         self.__gender: str = gender
@@ -20,6 +63,9 @@ class Human:
         self.__skin_tone: int = skin_tone
         self.__hair_length: int = hair_length
         self.__energy_percentage: float = energy_percentage
+
+        if energy_percentage < 0 or energy_percentage > 1:
+            raise ValueError('Energy percentage must be between 0 and 1.')
 
 
     def __repr__(self) -> str:
