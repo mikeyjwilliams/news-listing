@@ -5,7 +5,7 @@ from typing import Dict, List
 
 class Human:
     def __init__(self, name, age=24, gender='M', height_in_inches=56, weight_in_pounds=155, eye_count=2, teeth_count=23, hair_style='short', eye_color='blue',
-        teeth_color='yellow', hair_color='blonde', skin_tone=3, hair_length=3, energy_percentage=100) -> None:
+    teeth_color='yellow', hair_color='blonde', skin_tone=3, hair_length=3, energy_percentage=1) -> None:
         self.__name: str = name
         self.__age: int = age
         self.__gender: str = gender
@@ -28,15 +28,15 @@ class Human:
     {self.__teeth_count}, {self.__hair_style}, {self.__eye_color}, \n
     {self.__teeth_color}, {self.__hair_color}, {self.__skin_tone}, {self.__hair_length}, \n
     {self.__energy_percentage}'''
-        
-    
+
+
     def __str__(self) -> str:
         return f'''name {self.__name}, \n
     {self.__age}, {self.__gender}, {self.__height} {self.__weight}  \n
     {self.__eye_count}, {self.__teeth_count}, {self.__hair_style},  {self.__eye_color}, \n
     {self.__teeth_color}, {self.__hair_color}, {self.__skin_tone}, {self.__hair_length}, \n
     {self.__energy_percentage}'''
-        
+
 
     # NAME SECTION
     def name_getter(self) -> str:
@@ -44,11 +44,11 @@ class Human:
 
     def name_setter(self, name) -> None:
         self.__name = name
-        
-    
+
+
     def get_full_name_dict(self) -> Dict[str, str]:
         """
-        Returns a dictionary containing the full name of the Human, 
+        Returns a dictionary containing the full name of the Human,
         with keys 'first_name' and 'last_name'.
 
         If the Human's name only contains one word, the 'last_name' key will be set to an empty string.
@@ -65,7 +65,7 @@ class Human:
             full_name_dict['last_name'] = self.name_getter().split()[-1]
         full_name_dict['first_name'] = self.name_getter().split()[0]
         return full_name_dict
-    
+
     def get_first_name(self) -> str:
         """
         Returns the first name of the Human.
@@ -77,21 +77,21 @@ class Human:
             str: The first name of the Human.
         """
         return self.get_full_name_dict()['first_name']
-    
+
     def get_last_name(self) -> str:
         if len(self.get_full_name_dict()) == 2:
             return self.get_full_name_dict()['last_name']
         else:
             return ''
-        
-    
+
+
     # Age section
     def age_getter(self) -> int:
         return self.__age
 
     def age_setter(self, age: int) -> None:
         self.__age = age
-    
+
     # Gender section
     def gender_getter(self) -> str:
         return self.__gender
@@ -144,7 +144,7 @@ class Human:
     # skin tone section
     def skin_tone_getter(self) -> int:
         return self.__skin_tone
-    
+
     def skin_tone_setter(self, skin_tone: int) -> None:
         self.__skin_tone = skin_tone
     # hair length section
@@ -155,16 +155,41 @@ class Human:
         self.__hair_length = hair_length
     # Energy percentage section
     def energy_percentage_getter(self) -> float:
-        return self.__energy_percentage
+        return f'{self.__energy_percentage:.5f}'
 
     def energy_percentage_setter(self, energy_percentage: float) -> None:
-        self.__energy_percentage = energy_percentage
-    
-        
+        if energy_percentage < 0:
+            raise ValueError('Energy percentage must be between 0 and 1.')
+        if energy_percentage > 1:
+            self.__energy_percentage = 1
+        else:
+            self.__energy_percentage = energy_percentage
 
-        
-        
-        
+    # method that reduces the energy percentage by 25%
+    def reduce_energy_percentage(self, reduce_amount) -> None:
+        self.__energy_percentage -= reduce_amount
+        self.__energy_percentage = round(self.__energy_percentage, 2)
+        self.__energy_percentage = max(self.__energy_percentage, 0)
+        self.__energy_percentage = min(self.__energy_percentage, 100)
+
+
+    # energy sleep add method that increases the energy percentage by 10%
+    def increase_energy_percentage(self, increase_amount) -> None:
+        self.__energy_percentage += increase_amount
+        self.__energy_percentage = round(self.__energy_percentage, 2)
+        self.__energy_percentage = max(self.__energy_percentage, 0)
+        self.__energy_percentage = min(self.__energy_percentage, 100)
+
+    def sleep(self) -> None:
+        self.__energy_percentage += 0.35
+        self.__energy_percentage = round(self.__energy_percentage, 2)
+        self.__energy_percentage = max(self.__energy_percentage, 0)
+        self.__energy_percentage = min(self.__energy_percentage, 100)
+
+
+
+
+
 
     # def day_pasts(self, age_in_years):
     #     one_day = 0.00279397260273972603 # 1 year = 365 days = 365/1 = one_day
@@ -179,5 +204,3 @@ class Human:
     #     self.__energy_percentage = round(self.__energy_percentage, 2)
     #     self.__energy_percentage = max(self.__energy_percentage, 0)
     #     self.__energy_percentage = min(self.__energy_percentage, 100)
-    
-    
