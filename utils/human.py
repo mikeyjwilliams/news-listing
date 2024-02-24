@@ -13,20 +13,20 @@ def main():
 
 class Human:
     def __init__(self, name: str,
-                age: int = 18, 
-                gender: str = 'M', 
-                height_in_inches: int = 64,
-                weight_in_pounds: float = 172,
-                eye_count: int = 2,
-                teeth_count: int = 32,
-                hair_style: str = 'long',
-                eye_color: str = 'blue-green',
-                teeth_color: str = 'semi-white',
-                hair_color: str = 'red',
-                skin_tone: int = 3,
-                hair_length: int = 36,
-                energy_percentage: float = 1.0
-                ) -> None:
+        age: int = 18, 
+        gender: str = 'M', 
+        height_in_inches: int = 64,
+        weight_in_pounds: float = 172,
+        eye_count: int = 2,
+        teeth_count: int = 32,
+        hair_style: str = 'long',
+        eye_color: str = 'blue-green',
+        teeth_color: str = 'semi-white',
+        hair_color: str = 'red',
+        skin_tone: int = 3,
+        hair_length: int = 36,
+        energy_percentage: float = 1.0
+        ) -> None:
         """
         Initialize a Human object.
 
